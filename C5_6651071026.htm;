@@ -4,6 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký tài khoản mới - ShopVN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+        body {
+            background-color: #f1f3f5;
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+        }
+        main {
+            width: 100%;
+            max-width: 650px;
+        }
+        section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px 35px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            color: #212529;
+            margin-bottom: 24px;
+        }
+        fieldset {
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: 600;
+            font-size: 14.5px;
+            color: #495057;
+            padding: 0 8px;
+        }
+        .form-group {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        label {
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="number"],
+        input[type="date"],
+        input[type="search"] {
+            width: 100%;
+            padding: 6px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 13.5px;
+            outline: none;
+        }
+        input:focus {
+            border-color: #339af0;
+        }
+        input[type="color"] {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            width: 44px;
+            height: 28px;
+            cursor: pointer;
+            padding: 1px;
+            background: none;
+        }
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .range-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .range-wrap span {
+            font-weight: 600;
+            color: #2b8a3e;
+            font-size: 13.5px;
+        }
+        .buttons-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            background-color: #1971c2;
+            color: #fff;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: #868e96;
+            color: #fff;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1864ab;
+        }
+        input[type="reset"]:hover {
+            background-color: #495057;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -12,76 +149,83 @@
             <form action="xu_ly_dangky.php" method="POST" enctype="multipart/form-data" name="formDangKy" id="formDangKy">
                 <fieldset>
                     <legend>Thông tin cơ bản</legend>
-                    <p>
+                    <div class="form-group">
                         <label for="hoten">Họ và tên:</label>
                         <input type="text" name="hoten" id="hoten" placeholder="Nguyễn Văn An" required maxlength="100">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="matkhau">Mật khẩu:</label>
                         <input type="password" name="matkhau" id="matkhau" minlength="8" required>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="sdt">Số điện thoại:</label>
                         <input type="tel" name="sdt" id="sdt" pattern="[0-9]{10}" placeholder="0901234567">
-                    </p>
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Thông tin cá nhân</legend>
-                    <p>
+                    <div class="form-group">
                         <label for="tuoi">Tuổi:</label>
                         <input type="number" name="tuoi" id="tuoi" min="16" max="99" step="1" value="18">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="ngaysinh">Ngày sinh:</label>
-                        <input type="date" name="ngaysinh" id="ngaysinh" min="1950-01-01" max="2010-12-31">
-                    </p>
-                    <p>
+                        <input type="date" name="ngaysinh" id="ngaysinh" min="1950-01-01" max="2010-12-31" value="2005-01-01">
+                    </div>
+                    <div class="form-group">
                         <label>Giới tính:</label>
-                        <label><input type="radio" name="gioitinh" value="nam"> Nam</label>
-                        <label><input type="radio" name="gioitinh" value="nu"> Nữ</label>
-                        <label><input type="radio" name="gioitinh" value="khac"> Khác</label>
-                    </p>
-                    <p>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gioitinh" value="nam" checked> Nam</label>
+                            <label><input type="radio" name="gioitinh" value="nu"> Nữ</label>
+                            <label><input type="radio" name="gioitinh" value="khac"> Khác</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="mauua">Màu yêu thích:</label>
                         <input type="color" name="mauua" id="mauua" value="#FF6B6B">
-                    </p>
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Sở thích &amp; Cài đặt</legend>
-                    <p>
+                    <div class="form-group">
                         <label for="soikim">Tìm kiếm sở thích:</label>
                         <input type="search" name="soikim" id="soikim" placeholder="Ví dụ: đọc sách, chơi game...">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="chitieu">Mức chi tiêu/tháng (VNĐ):</label>
-                        <input type="range" name="chitieu" id="chitieu" min="0" max="50000000" step="500000" value="5000000">
-                    </p>
-                    <p>
+                        <div class="range-wrap">
+                            <input type="range" name="chitieu" id="chitieu" min="0" max="50000000" step="500000" value="5000000">
+                            <span>5.000.000₫</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label>Sở thích (chọn nhiều):</label>
-                        <label><input type="checkbox" name="st_docsinh" value="doc"> Đọc sách</label>
-                        <label><input type="checkbox" name="st_game" value="game"> Chơi game</label>
-                        <label><input type="checkbox" name="st_du_lich" value="dulich"> Du lịch</label>
-                    </p>
-                    <p>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="st_docsinh" value="doc" checked> Đọc sách</label>
+                            <label><input type="checkbox" name="st_game" value="game"> Chơi game</label>
+                            <label><input type="checkbox" name="st_du_lich" value="dulich"> Du lịch</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="website">Website cá nhân:</label>
                         <input type="url" name="website" id="website" placeholder="https://example.com">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="avatar">Ảnh đại diện:</label>
                         <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
-                    </p>
+                    </div>
                 </fieldset>
 
-                <p>
+                <div class="buttons-group">
                     <input type="submit" value="Đăng ký ngay">
                     <input type="reset" value="Nhập lại">
-                </p>
+                </div>
             </form>
         </section>
     </main>
