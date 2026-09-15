@@ -4,124 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt vé máy bay VietAir</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        }
-        body {
-            background-color: #eef2f6;
-            padding: 30px 15px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 680px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        header h1 {
-            font-size: 24px;
-            color: #0b7285;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        h2 {
-            font-size: 18px;
-            color: #212529;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        fieldset {
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            background-color: #fafbfc;
-        }
-        legend {
-            font-weight: 700;
-            font-size: 14px;
-            color: #212529;
-            padding: 0 6px;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .field {
-            margin-bottom: 10px;
-        }
-        .field:last-child {
-            margin-bottom: 0;
-        }
-        label {
-            display: block;
-            font-size: 12.5px;
-            color: #495057;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 7px 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            font-size: 13px;
-            background: #ffffff;
-            outline: none;
-        }
-        input:focus, select:focus {
-            border-color: #228be6;
-        }
-        .result-box {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1c7ed6;
-            padding: 6px 0;
-        }
-        output {
-            font-size: 16px;
-            font-weight: 700;
-            color: #c92a2a;
-        }
-        .sec-note {
-            font-size: 12.5px;
-            color: #666;
-            line-height: 1.4;
-        }
-        button[type="submit"] {
-            width: 100%;
-            background: #f76707;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 25px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(247, 103, 7, 0.25);
-            transition: background 0.2s;
-        }
-        button[type="submit"]:hover {
-            background: #e8590c;
-        }
-    </style>
+    <link rel="stylesheet" href="style6.css">
 </head>
 <body>
     <div class="container">
@@ -156,7 +39,7 @@
                         <option value="Cần Thơ – VCA">
                     </datalist>
 
-                    <div class="grid-2" style="margin-top: 10px;">
+                    <div class="grid-2 mt-10">
                         <div class="field">
                             <label for="ngay_di">Ngày đi:</label>
                             <input type="date" name="ngay_di" id="ngay_di" required value="2023-10-15">
@@ -167,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="field" style="margin-top: 10px;">
+                    <div class="field mt-10">
                         <label for="hang_ghe">Hạng ghế:</label>
                         <select name="hang_ghe" id="hang_ghe">
                             <optgroup label="Phổ thông">
@@ -190,10 +73,10 @@
                         </div>
                         <div class="field">
                             <label for="tre_em">Số trẻ em:</label>
-                            <input type="number" name="tre_em" id="tre_em" min="0" max="9" value="1">
+                            <input type="number" name="tre_em" id="tre_em" min="0" max="9" value="0">
                         </div>
                     </div>
-                    <div class="field" style="margin-top: 10px;">
+                    <div class="field mt-10">
                         <label for="ma_giam">Mã giảm giá:</label>
                         <input type="text" name="ma_giam" id="ma_giam" placeholder="Nhập mã nếu có" list="ma_uu_dai" value="SUMMER20">
                     </div>
@@ -210,7 +93,7 @@
                     <div class="result-box">
                         <label for="tong_tien">Tổng tiền ước tính:</label>
                         <output name="tong_tien" id="tong_tien" for="hang_ghe nguoi_lon tre_em">3.600.000 VND</output>
-                        <small style="color: #888; font-weight: normal;">(for illustration only, matching input example)</small>
+                        <small class="note-example">(for illustration only, matching input example)</small>
                     </div>
                 </fieldset>
 
@@ -226,4 +109,6 @@
     </div>
 </body>
 </html>
-               
+
+       
+              
